@@ -3,7 +3,7 @@ import React from 'react';
 import TodoItem from './TodoItem';
 import TodoStore from '../stores/TodoStore';
 
-export default class Todo extends React.Component {
+export default class TodoList extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -12,11 +12,9 @@ export default class Todo extends React.Component {
     }
 
     render() {
-        let todoItemList = this.state.todos.map((object, key) =>
+        const todoItemList = this.state.todos.map((object, key) =>
             <TodoItem todoItem={object} key={key}/>
         );
-
-        console.log(todoItemList[0])
 
         return (
             <section class="todo-section">

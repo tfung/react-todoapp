@@ -1,6 +1,7 @@
 body {
-    max-width: 1200px;
-    margin: 20px 5px;
+    max-width: 768px;
+    /*margin: 20px 5px;*/
+    margin: 0 auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -47,7 +48,17 @@ label {
 .todo-item {
     border-bottom: 1px #dcdcdc solid;
     padding: 5px 5px;
+    display: table;
+    width: 100%;
 }
+.todo-item > .todo-item-info {
+    display: table-cell;
+}
+.todo-item > .todo-item-edit {
+    display: table-cell;
+    text-align: right;
+}
+
 .todo-item:hover {
     background-color: #dcdcdc;
 }
@@ -66,11 +77,24 @@ label {
 }
 
 /* Media Queries */
-@media (min-width: 375px) {
+@media (max-width: 374px) {
+    .header-section {
+        border-radius: 0;
+    }
+    .todo-item > .todo-item-edit button {
+        padding: 20px;
+    }
 }
-
+@media (min-width: 375px) {
+    .todo-item > .todo-item-edit button {
+        padding: 10px;
+    }
+}
 @media (min-width: 768px) {
     .todo-item-detail {
         display: block;
+    }
+    .todo-item > .todo-item-edit button {
+        padding: 20px;
     }
 }

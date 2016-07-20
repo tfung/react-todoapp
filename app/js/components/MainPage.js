@@ -2,7 +2,8 @@ import React from 'react';
 
 import Header from './Header';
 import Footer from './Footer';
-import Todo from './Todo';
+import TodoList from './TodoList';
+import AddTodo from './AddTodo';
 
 import { Link } from "react-router";
 
@@ -11,7 +12,8 @@ export default class MainPage extends React.Component {
         return (
             <div>
                 <Header />
-                <Todo />
+                <AddTodo />
+                <TodoList />
                 <Footer />
             </div>
         );

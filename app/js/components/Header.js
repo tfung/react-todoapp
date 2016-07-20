@@ -1,6 +1,10 @@
 import React from "react";
 
 export default class Header extends React.Component {
+    componentWillMount() {
+
+    }
+
     render() {
         return (
             <section class="header-section">

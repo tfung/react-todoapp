@@ -9,10 +9,15 @@ export default class TodoItem extends React.Component {
         const formattedAssignee = Assignee.join(', ');
 
         return (
-            <div class="todo-item">
-                <span class="todo-item-title">{Title}</span>
-                <span class="todo-item-detail">Assignees: {formattedAssignee}</span>
-                <span class="todo-item-detail">Date: {formattedDueDate}</span>
+            <div class="todo-item" >
+                <div class="todo-item-info">
+                    <span class="todo-item-title">{Title}</span>
+                    <span class="todo-item-detail">Assignees: {formattedAssignee}</span>
+                    <span class="todo-item-detail">Date: {formattedDueDate}</span>
+                </div>
+                <div class="todo-item-edit">
+                    <button>Remove</button>
+                </div>
             </div>
         );
     }
