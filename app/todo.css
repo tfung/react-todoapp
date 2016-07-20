@@ -1,0 +1,76 @@
+body {
+    max-width: 1200px;
+    margin: 20px 5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+    font-weight: normal;
+    margin: 0;
+    padding: 3px 0;
+}
+
+label {
+    font-family: sans-serif;
+}
+
+* {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.header-section {
+    background-color: #888;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.footer-section {
+    text-align: center;
+}
+
+.search-section-outer {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+.search-section-inner {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+/* Todos */
+.todo-section {
+    margin: 0 5px;
+}
+.todo-item {
+    border-bottom: 1px #dcdcdc solid;
+    padding: 5px 5px;
+}
+.todo-item:hover {
+    background-color: #dcdcdc;
+}
+.todo-item-title {
+    font-weight: bold;
+    padding: 10px 0;
+}
+.todo-item-detail {
+    display: none;
+    padding: 2px 8px;
+}
+
+/* Miscellaneous */
+.text-middle {
+    text-align: center;
+}
+
+/* Media Queries */
+@media (min-width: 375px) {
+}
+
+@media (min-width: 768px) {
+    .todo-item-detail {
+        display: block;
+    }
+}
