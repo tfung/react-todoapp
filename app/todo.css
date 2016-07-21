@@ -1,6 +1,5 @@
 body {
     max-width: 768px;
-    /*margin: 20px 5px;*/
     margin: 0 auto;
 }
 
@@ -89,6 +88,13 @@ table th {
 }
 .text-underline {
     text-decoration: underline;
+}
+
+.btn {
+    border-radius: 5px;
+    border: none;
+    background-color: #aadae8;
+    margin: 5px;
 }
 
 /* Media Queries */
