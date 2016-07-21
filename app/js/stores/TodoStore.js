@@ -2,7 +2,6 @@ import { EventEmitter } from 'events';
 
 import dispatcher from '../dispatcher/Dispatcher';
 import TodoConstants from '../constants/TodoConstants';
-import jquery from 'jquery';
 
 class TodoStore extends EventEmitter {
     constructor() {
@@ -49,11 +48,16 @@ class TodoStore extends EventEmitter {
     }
 
     updateTodo(todo) {
+        // TODO
         this.emit('update');
     }
 
     getTodos() {
-        console.log(this.state)
+        return this.todos;
+    }
+
+    loadTodos(todos) {
+        this.todos = todos.data;
         return this.todos;
     }
 
@@ -64,11 +68,15 @@ class TodoStore extends EventEmitter {
                 break;
             }
             case TodoConstants.REMOVE_TODO : {
-                this.removeTodo(action.Id);
+                this.removeTodo(action.todoId);
                 break;
             }
             case TodoConstants.UPDATE_TODO : {
                 this.updateTodo(action.todo);
+                break;
+            }
+            case TodoConstants.LOAD_TODO : {
+                this.loadTodos(action.todos);
                 break;
             }
         }
@@ -77,6 +85,5 @@ class TodoStore extends EventEmitter {
 
 const todoStore = new TodoStore();
 dispatcher.register(todoStore.handleActions.bind(todoStore));
-//window.todoStore = todoStore;
-window.dispatcher = dispatcher;
+
 export default todoStore;

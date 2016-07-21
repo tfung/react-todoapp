@@ -6,6 +6,8 @@ import TodoList from './TodoList';
 import AddTodo from './AddTodo';
 
 import TodoStore from '../stores/TodoStore';
+import * as TodoActions from '../actions/TodoActions';
+
 // can prob remove later
 import { Link } from "react-router";
 
@@ -21,33 +23,16 @@ export default class TodoApp extends React.Component {
     componentWillMount() {
         TodoStore.on('update', () => {
             this.setState({
-                todos: TodoStore.getTodos()
+                todos: TodoActions.getTodos()
             });
         });
     }
-
-    addTodo() {
-        this.state.todos.push({
-            Title: 'Test',
-            Assignee: ['John Doe', 'Bon Jovi', 'John Smith'],
-            DueDate: new Date()
-        });
-
-        this.setState(this.state.todos);
-    }
-/*
-    removeTodo() {
-        this.state.todos.pop();
-
-        this.setState(this.state.todos);
-    }
-    */
 
     render() {
         return (
             <div>
                 <Header/>
-                <AddTodo addTodo={this.addTodo.bind(this)}  />
+                <AddTodo />
                 <TodoList todoList={this.state.todos}/>
                 <Footer />
             </div>
