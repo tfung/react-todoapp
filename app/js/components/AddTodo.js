@@ -18,7 +18,7 @@ export default class AddTodo extends React.Component {
         // const { addTodo } = this.props;
 
         return (
-            <div class="add-todo-section">
+            <form class="add-todo-section">
                 <table class="add-todo-table">
                     <tbody>
                     <tr>
@@ -38,7 +38,7 @@ export default class AddTodo extends React.Component {
                 <div class="text-middle">
                     <button class="btn" onClick={this.addTodo.bind(this)}>Add Todo</button>
                 </div>
-            </div>
+            </form>
         );
     }
 }

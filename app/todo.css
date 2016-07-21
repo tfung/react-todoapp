@@ -96,17 +96,13 @@ table th {
     .header-section {
         border-radius: 0;
     }
-    /*.todo-item > .todo-item-edit button {
-        padding: 20px;
-    }*/
     .btn {
-        padding: 20px;
+        padding: 3px 6px;
     }
 }
 @media (min-width: 375px) {
-    /*.todo-item > .todo-item-edit button {*/
     .btn {
-        padding: 10px;
+        padding: 5px 10px;
     }
 }
 @media (min-width: 768px) {
@@ -115,6 +111,6 @@ table th {
     }
     /*.todo-item > .todo-item-edit button {*/
     .btn {
-        padding: 20px;
+        padding: 10px 20px;
     }
 }
