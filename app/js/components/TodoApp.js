@@ -23,7 +23,7 @@ export default class TodoApp extends React.Component {
     componentWillMount() {
         TodoStore.on('update', () => {
             this.setState({
-                todos: TodoActions.getTodos()
+                todos: TodoStore.getTodos()
             });
         });
     }

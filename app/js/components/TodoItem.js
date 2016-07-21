@@ -1,11 +1,15 @@
 import React from 'react';
 import moment from 'moment';
 
-export default class TodoItem extends React.Component {
-    render() {
-        const { Title, Assignee, DueDate, Id } = this.props.todoItem;
+import * as TodoActions from '../actions/TodoActions';
 
-        console.log(Title)
+export default class TodoItem extends React.Component {
+    removeTodo() {
+        TodoActions.removeTodo(this.props.todoItem.Id);
+    }
+    
+    render() {
+        const { Id, Title, Assignee, DueDate } = this.props.todoItem;
 
         const formattedDueDate = moment(DueDate).format('LLLL');
         const formattedAssignee = Assignee.join(', ');
@@ -18,7 +22,7 @@ export default class TodoItem extends React.Component {
                     <span class="todo-item-detail">Date: {formattedDueDate}</span>
                 </div>
                 <div class="todo-item-edit">
-                    <button value={Id}>Remove</button>
+                    <button onClick={this.removeTodo.bind(this)} >Remove</button>
                 </div>
             </div>
         );

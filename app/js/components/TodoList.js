@@ -7,7 +7,7 @@ export default class TodoList extends React.Component {
     render() {
         const { todoList } = this.props;
 
-        let todoItemList = todoList.map((object, key) =>
+        const todoItemList = todoList.map((object, key) =>
             <TodoItem todoItem={object} key={object.Id}/>
         );
 
