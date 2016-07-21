@@ -5,6 +5,8 @@ export default class TodoItem extends React.Component {
     render() {
         const { Title, Assignee, DueDate } = this.props.todoItem;
 
+        console.log(Title)
+
         const formattedDueDate = moment(DueDate).format('LLLL');
         const formattedAssignee = Assignee.join(', ');
 

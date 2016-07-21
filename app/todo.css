@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 3px 0;
 }
 
-label {
+label, span {
     font-family: sans-serif;
 }
 
@@ -23,7 +23,7 @@ label {
 }
 
 .header-section {
-    background-color: #888;
+    background-color: #BBEBF9;
     border-radius: 5px;
     margin-bottom: 10px;
 }
@@ -46,7 +46,7 @@ label {
     margin: 0 5px;
 }
 .todo-item {
-    border-bottom: 1px #dcdcdc solid;
+    border-bottom: 1px #DEF8FF solid;
     padding: 5px 5px;
     display: table;
     width: 100%;
@@ -60,7 +60,7 @@ label {
 }
 
 .todo-item:hover {
-    background-color: #dcdcdc;
+    background-color: #DEF8FF;
 }
 .todo-item-title {
     font-weight: bold;

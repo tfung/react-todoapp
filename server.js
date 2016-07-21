@@ -5,24 +5,29 @@ var mongodb = require('mongodb');
 var mongoose = require('mongoose');
 // var Schema = mongoose.Schema;
 var TodoModel = require('./server/models/todo');
-var ObjectID = require('mongodb').ObjectID;
 
 var app = express();
 app.set('port', process.env.PORT || 3000);
 
 var db = mongoose.connect('mongodb://localhost:27017/todo');
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 /*
  * API
  */
 
-app.get('/api/todos', (req, res) => {
+app.get('/api/todos', function(req, res) {
     TodoModel.find({}, function (err, docs) {
         res.json(docs);
     });
 })
 
-app.get('/api/insert', (req, res) => {
+app.get('/api/insert', function(req, res) {
     var todo = new TodoModel();
 
     todo.Title= 'todo title';
@@ -37,7 +42,7 @@ app.get('/api/insert', (req, res) => {
     res.send('inserted')
 })
 
-app.get('/', (req, res) => {
+app.get('/', function(req, res) {
     res.send('ok')
 });
 

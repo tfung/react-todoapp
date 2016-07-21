@@ -1,16 +1,16 @@
 import Dispatcher from '../dispatcher/Dispatcher';
-import Constants from '../constants/TodoConstants';
+import TodoConstants from '../constants/TodoConstants';
 
-export function AddTodo() {
+export function AddTodo(todo) {
     Dispatcher.dispatch({
-        type: Constants.ADD_TODO,
-        text: 'add todo'
+        type: TodoConstants.ADD_TODO,
+        todoItem: todo
     });
 }
 
-export function RemoveTodo() {
+export function RemoveTodo(id) {
     Dispatcher.dispatch({
-        type: Constants.REMOVE_TODO,
-        text: 'remove todo'
+        type: TodoConstants.REMOVE_TODO,
+        todoId: id
     });
 }
