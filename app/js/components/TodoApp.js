@@ -8,9 +8,6 @@ import AddTodo from './AddTodo';
 import TodoStore from '../stores/TodoStore';
 import * as TodoActions from '../actions/TodoActions';
 
-// can prob remove later
-import { Link } from "react-router";
-
 export default class TodoApp extends React.Component {
     constructor() {
         super();
