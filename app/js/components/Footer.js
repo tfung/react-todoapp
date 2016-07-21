@@ -4,7 +4,7 @@ export default class Footer extends React.Component {
     render() {
         return (
             <section class="footer-section">
-                <p>Todos for Thomas Fung</p>
+                <span>Todos for Thomas Fung</span>
             </section>
         );
     }

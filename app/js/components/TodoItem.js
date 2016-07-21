@@ -7,7 +7,7 @@ export default class TodoItem extends React.Component {
     removeTodo() {
         TodoActions.removeTodo(this.props.todoItem.Id);
     }
-    
+
     render() {
         const { Id, Title, Assignee, DueDate } = this.props.todoItem;
 
@@ -22,7 +22,7 @@ export default class TodoItem extends React.Component {
                     <span class="todo-item-detail">Date: {formattedDueDate}</span>
                 </div>
                 <div class="todo-item-edit">
-                    <button onClick={this.removeTodo.bind(this)} >Remove</button>
+                    <button class="btn" onClick={this.removeTodo.bind(this)} >Remove</button>
                 </div>
             </div>
         );

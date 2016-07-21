@@ -11,9 +11,18 @@ h1, h2, h3, h4, h5, h6 {
     padding: 3px 0;
 }
 
-label, span {
+label, span, table {
     font-family: sans-serif;
 }
+
+section {
+    margin: 5px 0;
+}
+
+table th {
+    text-align: right;
+}
+
 * {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -25,6 +34,7 @@ label, span {
     background-color: #BBEBF9;
     border-radius: 5px;
     margin-bottom: 10px;
+    padding: 20px 0;
 }
 .footer-section {
     text-align: center;
@@ -39,7 +49,10 @@ label, span {
     display: inline-block;
     margin: 10px 0;
 }
-
+.add-todo-section > .add-todo-table {
+    margin:0 auto;
+    padding-bottom: 20px;
+}
 /* Todos */
 .todo-section {
     margin: 0 5px;
@@ -74,18 +87,25 @@ label, span {
 .text-middle {
     text-align: center;
 }
+.text-underline {
+    text-decoration: underline;
+}
 
 /* Media Queries */
 @media (max-width: 374px) {
     .header-section {
         border-radius: 0;
     }
-    .todo-item > .todo-item-edit button {
+    /*.todo-item > .todo-item-edit button {
+        padding: 20px;
+    }*/
+    .btn {
         padding: 20px;
     }
 }
 @media (min-width: 375px) {
-    .todo-item > .todo-item-edit button {
+    /*.todo-item > .todo-item-edit button {*/
+    .btn {
         padding: 10px;
     }
 }
@@ -93,7 +113,8 @@ label, span {
     .todo-item-detail {
         display: block;
     }
-    .todo-item > .todo-item-edit button {
+    /*.todo-item > .todo-item-edit button {*/
+    .btn {
         padding: 20px;
     }
 }
