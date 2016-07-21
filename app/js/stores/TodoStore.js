@@ -7,87 +7,68 @@ import jquery from 'jquery';
 class TodoStore extends EventEmitter {
     constructor() {
         super();
-        this.todos = [];
-/*
-        [
-            {
-                Title: 'Get Groceries',
-                Assignee: ['John Doe', 'Bon Jovi', 'John Smith'],
-                DueDate: new Date()
-            },
-            {
-                Title: 'Get Groceries',
-                Assignee: ['John Doe', 'Bon Jovi', 'John Smith'],
-                DueDate: new Date()
-            },
-            {
-                Title: 'Get Groceries',
-                Assignee: ['John Doe', 'Bon Jovi', 'John Smith'],
-                DueDate: new Date()
-            },
-            {
-                Title: 'Get Groceries',
-                Assignee: ['John Doe', 'Bon Jovi', 'John Smith'],
-                DueDate: new Date()
-            }
-        ];
-*/
-
+        this.todos =
+            [
+                {
+                    Id: Math.round(Math.random()*10000),
+                    Title: 'Get Groceries',
+                    Assignee: ['John Doe', 'Bon Jovi', 'John Smith'],
+                    DueDate: new Date()
+                },
+                {
+                    Id: Math.round(Math.random()*10000),
+                    Title: 'Get Groceries',
+                    Assignee: ['John Doe', 'Bon Jovi', 'John Smith'],
+                    DueDate: new Date()
+                },
+                {
+                    Id: Math.round(Math.random()*10000),
+                    Title: 'Get Groceries',
+                    Assignee: ['John Doe', 'Bon Jovi', 'John Smith'],
+                    DueDate: new Date()
+                },
+                {
+                    Id: Math.round(Math.random()*10000),
+                    Title: 'Get Groceries',
+                    Assignee: ['John Doe', 'Bon Jovi', 'John Smith'],
+                    DueDate: new Date()
+                }
+            ];
     }
 
-    componentDidMount() {
+    addTodo(todo) {
+        this.todos.push(todo)
+        this.emit('update');
     }
 
-    componentWillUnmount() {
+    removeTodo(todoId) {
+        this.todos = this.todos.filter((todo) => {
+            return todo.Id != todoId;
+        });
+        this.emit('update');
     }
 
-    addTodo() {
-        console.log('add')
-    }
-
-    removeTodo() {
-        console.log('remove')
-    }
-
-    updateTodo() {
-        console.log('update');
-    }
-
-    initTodo(todoData) {
-        console.log('update');
+    updateTodo(todo) {
+        this.emit('update');
     }
 
     getTodos() {
-        // let todos = [];
-        //
-        // jquery.ajax({
-        //     url: 'http://localhost:3000/api/todos',
-        //     success: function (data, textStatus, jqXHR) {
-        //         this.todos = data;
-        //         // dispatch
-        //     }
-        // });
+        console.log(this.state)
         return this.todos;
     }
 
     handleActions(action) {
-        console.log(action)
-
         switch(action.type) {
             case TodoConstants.ADD_TODO : {
                 this.addTodo(action.todo);
                 break;
             }
             case TodoConstants.REMOVE_TODO : {
-                this.removeTodo();
+                this.removeTodo(action.Id);
                 break;
             }
             case TodoConstants.UPDATE_TODO : {
-                this.updateTodo();
-                break;
-            }
-            case TodoConstants.INIT_TODO : {
-                this.initTodo();
+                this.updateTodo(action.todo);
                 break;
             }
         }
@@ -95,6 +76,7 @@ class TodoStore extends EventEmitter {
 }
 
 const todoStore = new TodoStore();
-dispatcher.register();
-
+dispatcher.register(todoStore.handleActions.bind(todoStore));
+//window.todoStore = todoStore;
+window.dispatcher = dispatcher;
 export default todoStore;

@@ -14,7 +14,16 @@ export default class TodoApp extends React.Component {
         super();
         this.state = {
             todos: TodoStore.getTodos()
-        }
+        };
+    }
+
+    // Will only fire on render
+    componentWillMount() {
+        TodoStore.on('update', () => {
+            this.setState({
+                todos: TodoStore.getTodos()
+            });
+        });
     }
 
     addTodo() {
@@ -26,12 +35,13 @@ export default class TodoApp extends React.Component {
 
         this.setState(this.state.todos);
     }
-
+/*
     removeTodo() {
         this.state.todos.pop();
 
         this.setState(this.state.todos);
     }
+    */
 
     render() {
         return (

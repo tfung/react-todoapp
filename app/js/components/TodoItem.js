@@ -3,7 +3,7 @@ import moment from 'moment';
 
 export default class TodoItem extends React.Component {
     render() {
-        const { Title, Assignee, DueDate } = this.props.todoItem;
+        const { Title, Assignee, DueDate, Id } = this.props.todoItem;
 
         console.log(Title)
 
@@ -18,7 +18,7 @@ export default class TodoItem extends React.Component {
                     <span class="todo-item-detail">Date: {formattedDueDate}</span>
                 </div>
                 <div class="todo-item-edit">
-                    <button>Remove</button>
+                    <button value={Id}>Remove</button>
                 </div>
             </div>
         );
