@@ -19,7 +19,7 @@ export default class TodoItem extends React.Component {
                 <div class="todo-item-info">
                     <span class="todo-item-title">{Title}</span>
                     <span class="todo-item-detail">Assignees: {formattedAssignee}</span>
-                    <span class="todo-item-detail">Date: {formattedDueDate}</span>
+                    <span class="todo-item-detail">Due Date: {formattedDueDate}</span>
                 </div>
                 <div class="todo-item-edit">
                     <button class="btn" onClick={this.removeTodo.bind(this)} >Remove</button>

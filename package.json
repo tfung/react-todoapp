@@ -1,12 +1,10 @@
 {
   "name": "react-todoapp",
   "version": "1.0.0",
-  "description": "",
-  "main": "webpack.config.js",
   "scripts": {
     "webpack-dev-server": "webpack-dev-server --content-base app --inline --hot",
     "webpack-prod": "webpack",
-    "node-dev" : "node server.js",
+    "node-dev" : "nodemon server.js",
     "node-prod" : "NODE_ENV=production node server.js"
   },
   "repository": {
